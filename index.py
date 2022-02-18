@@ -7,7 +7,7 @@ import slackAlertSend
 sys.path.append("/credentials")
 import credentials as crd
 
-accessToke = crd.AUTH_TOKEN
+accessToken = crd.AUTH_TOKEN
 sampleAlert = ""
 
 app = Flask(__name__)
@@ -22,25 +22,25 @@ def home():
 
 @app.route('/messages',methods=['POST'])
 
-def messages():
+        def messages():
     
-        sampleAlert = json.dumps(request.json)
+                sampleAlert = json.dumps(request.json)
 
-        print("                                                                                     ")
-        print("-------------------------------------------------------------------------------------")
-        print("---------------          T-H-O-U-S-A-N-D   E-Y-E-S            -----------------------")
-        print("-------------------------------------------------------------------------------------")
-        print("*********************** ALERT_NOTIFICATION_TRIGGER **********************************")
-        print("                                                                                     ")
-          
-        #print (sampleAlert)
-       
-        return sampleAlert
+                print("                                                                                     ")
+                print("-------------------------------------------------------------------------------------")
+                print("---------------          T-H-O-U-S-A-N-D   E-Y-E-S            -----------------------")
+                print("-------------------------------------------------------------------------------------")
+                print("*********************** ALERT_NOTIFICATION_TRIGGER **********************************")
+                print("                                                                                     ")
+                
+                #print (sampleAlert)
+        
+                return sampleAlert
 
 
-a = json.dumps(messages(), indent=4)
-slackAlertSend.slackAlertSend (accessToke, a)
-    
+        a = json.dumps(messages(), indent=4)
+        slackAlertSend.slackAlertSend (accessToken, a)
+        
         
 
 

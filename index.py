@@ -33,11 +33,11 @@ def messages():
         sampleAlert = json.dumps(request.json)
         #print (sampleAlert)
         
-        return sampleAlert
+        a = json.dumps(sampleAlert, indent=4)
+        slackAlertSend.slackAlertSend (accessToken, a)
 
+        return
 
-a = json.dumps(messages(), indent=4)
-slackAlertSend.slackAlertSend (accessToken, a)
         
         
 

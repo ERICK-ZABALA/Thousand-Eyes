@@ -1,11 +1,12 @@
-from flask import json # lib format json
-from flask import request # lib rest-api
-from flask import Flask # server web application
+from flask import json 
+from flask import request
+from flask import Flask 
 import sys
 import slackAlertSend
+import credentials as crd
 
 sys.path.append("/credentials")
-import credentials as crd
+
 
 accessToken = crd.AUTH_TOKEN
 
@@ -26,7 +27,7 @@ def messages():
                
         print("                                                                                     ")
         print("-------------------------------------------------------------------------------------")
-        print("---------------          T H O U S A N D   E Y E S            -----------------------")
+        print("                         T H O U S A N D   E Y E S                                   ")
         print("-------------------------------------------------------------------------------------")
         print("*********************** ALERT_NOTIFICATION_TRIGGER **********************************")
         print("                                                                                     ")
@@ -37,8 +38,6 @@ def messages():
 
         return sampleAlert
 
-        
-        
 
 
 if __name__ == '__main__':

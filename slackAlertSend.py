@@ -16,6 +16,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 def slackAlertSend (accessToken, alertThousandEyes):
 
+    err= ""
     #alertThousandEyes = json.dumps((alertThousandEyes), indent=4)
 
     accessAuthorization = {
@@ -29,7 +30,15 @@ def slackAlertSend (accessToken, alertThousandEyes):
     payload = json.dumps({"text": "{}".format (alertThousandEyes)})
     route = "https://hooks.slack.com/services/" + accessToken
 
-    #print (alertThousandEyes) # coloca en formato Json la alerta
-    response = requests.post(url=route, headers=accessAuthorization, data= payload) # Envia el mensaje a Slack
-    print (response.content) # Message Status
+    try: 
+
+        print (alertThousandEyes) # coloca en formato Json la alerta
+        response = requests.post(url=route, headers=accessAuthorization, data= payload) # Envia el mensaje a Slack
+        print (response.content) # Message Status
+        
+
+    except requests.exceptions.RequestException as err:
+        print("HTTP Request failed")
+        print(err)
+    
     return alertThousandEyes

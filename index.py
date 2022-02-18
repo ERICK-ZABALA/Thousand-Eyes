@@ -38,7 +38,7 @@ def messages():
         return sampleAlert
 
 
-a = json.dumps(home (), indent=4)
+a = json.dumps(messages(), indent=4)
 slackAlertSend.slackAlertSend (accessToke, a)
     
         

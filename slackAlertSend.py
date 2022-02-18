@@ -1,12 +1,11 @@
-from lib2to3.pgen2 import token
+#from lib2to3.pgen2 import token
 import requests
 import json
-import sys
+#import sys
 
-sys.path.append("/index")
-import index as alert
+#sys.path.append("/index")
+#import index as alert
 
-alertThousandEyes = json.dumps((alert.sampleAlert), indent=4)
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -16,6 +15,8 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 #accessToken = token
 
 def slackAlertSend (accessToken, alertThousandEyes):
+
+    alertThousandEyes = json.dumps((alertThousandEyes), indent=4)
 
     accessAuthorization = {
                             "Authorization": "Bearer {}".format (accessToken),

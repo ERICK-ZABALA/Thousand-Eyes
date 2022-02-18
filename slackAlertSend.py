@@ -29,7 +29,7 @@ def slackAlertSend (accessToken, alertThousandEyes):
     payload = json.dumps({"text": "{}".format (alertThousandEyes)})
     route = "https://hooks.slack.com/services/" + accessToken
 
-    print (alertThousandEyes) # coloca en formato Json la alerta
+    #print (alertThousandEyes) # coloca en formato Json la alerta
     response = requests.post(url=route, headers=accessAuthorization, data= payload) # Envia el mensaje a Slack
     print (response.content) # Message Status
     return alertThousandEyes

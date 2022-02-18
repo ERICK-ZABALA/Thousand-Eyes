@@ -26,17 +26,16 @@ def messages():
                
         print("                                                                                     ")
         print("-------------------------------------------------------------------------------------")
-        print("---------------          T-H-O-U-S-A-N-D   E-Y-E-S            -----------------------")
+        print("---------------          T H O U S A N D   E Y E S            -----------------------")
         print("-------------------------------------------------------------------------------------")
         print("*********************** ALERT_NOTIFICATION_TRIGGER **********************************")
         print("                                                                                     ")
-        sampleAlert = json.dumps(request.json)
-        #print (sampleAlert)
         
-        #a = json.dumps(sampleAlert, indent=4)
+        sampleAlert = json.dumps(request.json)
+                
         slackAlertSend.slackAlertSend (accessToken, sampleAlert)
 
-        return
+        return sampleAlert
 
         
         

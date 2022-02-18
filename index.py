@@ -8,7 +8,6 @@ sys.path.append("/credentials")
 import credentials as crd
 
 accessToken = crd.AUTH_TOKEN
-sampleAlert = ""
 
 app = Flask(__name__)
 
@@ -22,24 +21,23 @@ def home():
 
 @app.route('/messages',methods=['POST'])
 
-        def messages():
+def messages():
     
-                sampleAlert = json.dumps(request.json)
-
-                print("                                                                                     ")
-                print("-------------------------------------------------------------------------------------")
-                print("---------------          T-H-O-U-S-A-N-D   E-Y-E-S            -----------------------")
-                print("-------------------------------------------------------------------------------------")
-                print("*********************** ALERT_NOTIFICATION_TRIGGER **********************************")
-                print("                                                                                     ")
-                
-                #print (sampleAlert)
+               
+        print("                                                                                     ")
+        print("-------------------------------------------------------------------------------------")
+        print("---------------          T-H-O-U-S-A-N-D   E-Y-E-S            -----------------------")
+        print("-------------------------------------------------------------------------------------")
+        print("*********************** ALERT_NOTIFICATION_TRIGGER **********************************")
+        print("                                                                                     ")
+        sampleAlert = json.dumps(request.json)
+        #print (sampleAlert)
         
-                return sampleAlert
+        return sampleAlert
 
 
-        a = json.dumps(messages(), indent=4)
-        slackAlertSend.slackAlertSend (accessToken, a)
+a = json.dumps(messages(), indent=4)
+slackAlertSend.slackAlertSend (accessToken, a)
         
         
 

@@ -1,45 +1,58 @@
-import json
 import requests
-from requests import status_codes
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from requests.packages.urllib3.exceptions import InsecurePlatformWarning
+import json
+import sys
 
-APIC_URL = "https://devasc-aci-1.cisco.com"
+### Cisco DNA Center URL and Authentication Credentials
+# In a 'real' application, this information might be in a 'config.py' file
+# to keep authentication and target information out of the primary
+# https://api.thousandeyes.com/v6/status -u webex.code@gmail.com:5ij5239r4oowevck38tlj2tcl7fh06d3
 
-def apic_login():
-    """ Login to APIC"""
 
-    token = ""
-    err = ""
+# Authentication to DevAsc DNA Center
+
+username = "webex.code@gmail.com"
+password = "C1sc0123!"
+
+# define  Authentication method
+
+def get_X_auth_token(username,password):
+    """
+    Authenticate to remote Cisco DNA Center
+    
+    Parameters
+    ----------
+    dnacip (str): dnac routable DNS address or ip
+    username (str): dnac user name
+    password (str): password
+
+    Return:
+    ----------
+    str:dnac access token
+    """
+    # Supress credential warning for this exercise
+    requests.packages.urllib3.disable_warnings(InsecurePlatformWarning)
+
+    # Authentication API full URI
+
+    post_uri = "https://api.thousandeyes.com/v6/status"
+
+    print ("\nAuthenticate: POST %s"%(post_uri))
 
     try:
-        response = requests.post (
-            url=APIC_URL+"/api/aaaLogin.json",
-            headers={"Content-Type":"application/json; charset=utf-8",},
-            data=json.dumps(
-                {
-                    "aaaUser": {
-                        "attributes": {
-                            "name": "devnetuser",
-                            "pwd": "CardBoardGreen12!"
-                        }
-                    }
-                }
-            ),
-            verify=False
-        )
+        #verify - set to False to tell requests to NOT verify server's TLS certificate
+        # In production code this should be left to default to 'True'
+        r = requests.post(post_uri, auth=(username, password), verify=False)
+        return r.json()["Token"]
+    except:
+        #Something wrong, cannot get access token
+        print ("Status: %s"%r.status_code)
+        print ("Response: %s"%r.text)
+        sys.exit ()
 
-        json_response = json.loads(response.content)
-        token = json_response['imdata'][0]['aaaLogin']['attributes']['token']
-        print(token)
+# Authenticate to the Cisco Dna Center
+# and obtain an authentication token
 
-        print('Response HTTP Status Code: {status_code}'.format(
-               status_code=response.status_code))
-    
-    except requests.exceptions.RequestException as err:
-        print("HTTP Request failed")
-        print(err)
+token = get_X_auth_token(username,password)
+print("return Authentication Token: ", (token))
 
-    return token
-
-print('=========================APIC LOGIN=======================')
-apic_login()

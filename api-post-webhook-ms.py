@@ -1,54 +1,28 @@
-# CODE POST https://webexapis.com/v1/webhooks 
-
-import json
 import requests
+import json
+import sys
+
+sys.path.append("/index")
+import index as alert
+alertThousandEyes = json.dumps((alert.sampleAlert), indent=4)
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-API_POST_WEBHOOKS_URL = "https://webexapis.com/v1/webhooks"
-access_token = 'YTVhNDgxNzYtNmE1OC00ZWYzLWJhYjItNzI3NzJiYTRjMTY4MTMzOWMyYWItNGNl_P0A1_82bf7487-2ebe-4fc9-a984-8a94fc400056'
-WEBHOOK_URL = "https://webex-api.herokuapp.com/messages"
+# credentials of Slack Token: T034565CZG8/B033JS4NC2Z/l9MbWBB5rJhstw7ly1muZdSK
 
-def api_post_webhook():
+accessToken = 'T034565CZG8/B033JS4NC2Z/l9MbWBB5rJhstw7ly1muZdSK'
+accessAuthorization = {
+                        "Authorization": "Bearer {}".format (accessToken),
+                        "Content-Type": "application/json"
+                      }
 
-    token = ""
-    err = ""
+#payload = json.dumps ({ "text":"Hola Thousand Eyes!!!" })
+# la data se debe colocar en formato json por eso se usa el metodo json.dumps
 
-    try:
-        response = requests.post(
-            url= API_POST_WEBHOOKS_URL,
-            headers={
-                "Authorization": "Bearer {}".format(access_token),
-                "Content-Type": "application/json"
-            },
-            data=json.dumps(
-                {
-                    
-                    "name": "Webhook API Messages",
-                    "targetUrl": WEBHOOK_URL,
-                    "resource": "messages",
-                    "event": "created"
-                }
-            ),
-            verify=False
-        )
+payload = json.dumps({"text": "{}".format (alertThousandEyes)})
+route = "https://hooks.slack.com/services/" + accessToken
 
-        json_response = json.loads(response.content)
-        #token = json_response['imdata'][0]['aaaLogin']['attributes']['token']
-        #print(token)
-        print(json_response)
-        
-        print('Response HTTP Status Code: {status_code}'.format(
-            status_code=response.status_code))
-
-    except requests.exceptions.RequestException as err:
-        print("HTTP Request failed")
-        print(err)
-
-    return token
-
-
-print('======================== API-POST-WEBHOOK-MESSAGE ======================')
-
-api_post_webhook()
+print (alertThousandEyes) # coloca en formato Json la alerta
+response = requests.post(url=route, headers=accessAuthorization, data= payload) # Envia el mensaje a Slack
+print (response.content) # Message Status

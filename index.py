@@ -9,25 +9,26 @@ app = Flask(__name__)
 
 def home():
     
-        return "Webhook App"
+        return "W E L C O M E      T H O U S A N D     E Y E S"
 
 @app.route('/messages',methods=['POST'])
 
 def messages():
     
-        my_info = json.dumps(request.json)
-        print("********** FORMAT JSON POST REQUEST MESSAGE *************")
-        print (my_info)
-        return my_info
+        sampleAlert = json.dumps(request.json)
 
-@app.route('/rooms',methods=['POST'])
+        print("                                                                                     ")
+        print("-------------------------------------------------------------------------------------")
+        print("---------------          T-H-O-U-S-A-N-D   E-Y-E-S            -----------------------")
+        print("-------------------------------------------------------------------------------------")
+        print("*********************** ALERT_NOTIFICATION_TRIGGER **********************************")
+        print("                                                                                     ")
 
-def rooms():
-    
-        my_info = json.dumps(request.json)
-        print("********** FORMAT JSON POST REQUEST ROOMS *************")
-        print (my_info)
-        return my_info
+        print (sampleAlert)
+        
+        return sampleAlert
+
+  
 
 if __name__ == '__main__':
     app.run(debug=True)

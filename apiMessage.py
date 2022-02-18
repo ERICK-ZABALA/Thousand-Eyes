@@ -19,7 +19,7 @@ def slackAlertSend (accessToken, alertThousandEyes):
 
 
 
-    payload = json.dumps({"text": "{}".format (alertThousandEyes)})
+    payload = json.dumps({"text": "{}".format (alertThousandEyes)}, indent= 4, separators= (',',':') )
     print (payload)
     # Displayed in Heroku Console
 

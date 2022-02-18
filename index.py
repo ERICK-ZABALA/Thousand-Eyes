@@ -2,7 +2,7 @@ from flask import json
 from flask import request
 from flask import Flask 
 import sys
-import slackAlertSend
+import apiMessage
 import credentials as crd
 
 sys.path.append("/credentials")
@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 def home():
     
- return "WELCOME THOUSAND EYES"
+ return "W E L C O M E ----- T H O U S A N D ---- E Y E S"
 
 
 @app.route('/messages',methods=['POST'])
@@ -34,7 +34,7 @@ def messages():
         
         sampleAlert = json.dumps(request.json)
                 
-        slackAlertSend.slackAlertSend (accessToken, sampleAlert)
+        apiMessage.slackAlertSend (accessToken, sampleAlert)
 
         return sampleAlert
 

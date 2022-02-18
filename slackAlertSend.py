@@ -16,7 +16,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 def slackAlertSend (accessToken, alertThousandEyes):
 
-    alertThousandEyes = json.dumps((alertThousandEyes), indent=4)
+    #alertThousandEyes = json.dumps((alertThousandEyes), indent=4)
 
     accessAuthorization = {
                             "Authorization": "Bearer {}".format (accessToken),

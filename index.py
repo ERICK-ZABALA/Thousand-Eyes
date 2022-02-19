@@ -36,8 +36,8 @@ def messages():
         print("-------------------------- ALERT_NOTIFICATION_TRIGGER -------------------------------")
         print("                                                                                     ")
         
-        sampleAlert = print(json.dumps(request.json, indent = 4))
-                
+        sampleAlert = json.dumps(request.json, indent = 4)
+        print (sampleAlert)        
         apiMessage.slackAlertSend (accessToken, sampleAlert)
 
         return sampleAlert

@@ -19,10 +19,8 @@ def slackAlertSend (accessToken, alertThousandEyes):
 
 
 
-    payload = json.dumps({"text": "{}".format (alertThousandEyes)}, indent= 4, separators= (',',':') )
-    print (payload)
-    # Displayed in Heroku Console
-
+    payload = json.dumps({"text": "{}".format (alertThousandEyes)} )
+        
     route = "https://hooks.slack.com/services/" + accessToken
 
     try: 

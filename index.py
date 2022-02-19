@@ -1,3 +1,4 @@
+from textwrap import indent
 from flask import json 
 from flask import request
 from flask import Flask 
@@ -32,7 +33,7 @@ def messages():
         print("*********************** ALERT_NOTIFICATION_TRIGGER **********************************")
         print("                                                                                     ")
         
-        sampleAlert = json.dumps(request.json)
+        sampleAlert = json.dumps(request.json, indent = 4)
                 
         apiMessage.slackAlertSend (accessToken, sampleAlert)
 

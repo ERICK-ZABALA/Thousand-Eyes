@@ -7,6 +7,8 @@
 
 This example is an integration between ThousandEyes and Slack using Python. ThousandEyes sends alert notifications via our webhook service and those notifications are received in the Web Server deployed as an application in the cloud of Heroku. The Web Server who is hosted in Heroku Cloud send the notifications to Slack device using an incomming webhook of Slack that is a simple way to post messages from external sources (third parties).
 
+![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/flowAlert.png?raw=true)
+
 ## PREREQUISITES
 
 *  Create a trial account at https://www.thousandeyes.com/signup/. Write “Cisco” in the company field.
@@ -21,7 +23,7 @@ This example is an integration between ThousandEyes and Slack using Python. Thou
  * Create your virtual environmet in Python 3.9.2 and added the file runtime.txt, intall all dependecies indicated in requirements.txt as well added Procfile file.
 
  * You can use the same files:
- 
+
       * apiMessage.py  ------> Submit POST Request to Slack if there is any alert in out Thousand Eyes.
       * credentials.py ------> You need to remplace to your Slack Token.
       * index.py       ------> Active your Web Server using flask framework to receive POST request from Thosand Eyes Webhook service.

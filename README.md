@@ -37,7 +37,7 @@ This example is an integration between Thousand Eyes and Slack using Python. Tho
 
 * Activate your Web Server TD Bank with your Ngrok and Babyweb then go to ThousandEyes > Cloud & Enterprise Agents > Test Settings  and change your URL “https://6ffa-192-226-134-67.ngrok.io”
 
-![image](ttps://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/thousandEyesTest.jpg?raw=true)
+![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/thousandEyesTest.jpg?raw=true)
 
 * You will receive an alert cleared in the channel of Slack “# thousand-eyes-alerts”
 	

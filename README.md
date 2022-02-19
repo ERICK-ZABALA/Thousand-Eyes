@@ -1,5 +1,5 @@
 
-![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/Thousand-Eyes-Bot.jpg?raw=true)
+![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/thousandEyesLogo.jpg)
 
 # THOUSAND EYES
 

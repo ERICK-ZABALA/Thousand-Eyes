@@ -5,17 +5,18 @@
 
 ## OVERVIEW
 
-This example is an integration between ThousandEyes and Slack using Python. ThousandEyes sends alert notifications via our webhook service and those notifications are received in the Web Server deployed as an application in the cloud of Heroku. The Web Server who is hosted in Heroku Cloud send the notifications to Slack device using an incomming webhook of Slack that is a simple way to post messages from external sources (third parties).
+This example is an integration between Thousand Eyes and Slack using Python. Thousand Eyes sends alert notifications via our webhook service and those notifications are received in the Web Server API deployed as an application in the cloud of Heroku. The Web Server API is hosted in the Heroku Cloud send the notifications to Slack device using an incoming webhook of Slack that is a simple way to post messages from external sources (third parties).
 
 ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/flowAlert.png?raw=true)
 
 ## PREREQUISITES
 
-*  Create a trial account at https://www.thousandeyes.com/signup/. Write “Cisco” in the company field.
-*  Configure a test with an alert that will trigger and clear alerts for your testing in Thousand Eyes.
-*  Create a Slack instance https://slack.com/get-started#/createnew. 
-*  Create a Heroku account at https://id.heroku.com/login.
-*  Deploy a Web Server in your PC to make testing with Thousand Eyes, you can use the folder:webServerTdBank and the app:babywebssl.rar and ngrok (https://ngrok.com/download) to publish the service to internet.
+* Create a trial account at https://www.thousandeyes.com/signup/. Write “Cisco” in the company field.
+* Configure a Test (Web Server TD Bank) with an alert that will trigger and clear alerts for your testing in Thousand Eyes.
+* Create a Slack instance https://slack.com/get-started#/createnew.
+* Create a Heroku account at https://id.heroku.com/login.
+* Deploy a Web Server TD Bank in your PC to make testing with Thousand Eyes, you can use the folder:webServerTdBank and the app:babywebssl.rar and ngrok (https://ngrok.com/download) to publish the service to internet.
+
 
 
 ## CONFIGURATION

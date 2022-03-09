@@ -1,7 +1,8 @@
-from textwrap import indent
+
 from flask import json 
 from flask import request
 from flask import Flask 
+from flask import render_template
 import sys
 import apiMessage
 import credentials as crd
@@ -18,7 +19,15 @@ app = Flask(__name__)
 
 def home():
     
- return "W E L C O M E ----- T H O U S A N D ---- E Y E S"
+ return render_template('index.html')
+
+@app.route('/add_token',methods=['POST'])
+
+def add_token():
+    if request.method == 'POST':
+        accessToken = request.form ['token']    
+        print (accessToken)
+        return 'Received'        
 
 
 @app.route('/messages',methods=['POST'])

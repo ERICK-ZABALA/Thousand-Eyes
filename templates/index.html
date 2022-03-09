@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications to Slack</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+
+    <!-- Fonts Download from fonts.googleapis.com-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet">
+
+    <!-- CDN download from https://cdnjs.com/libraries/font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <!-- Section Web Begin-->
+
+    <div class="hero">
+       <nav>
+           <img class="logo" src="/static/img/logo.png">
+          
+          <ul>
+             <li><a href="#">Home</a></li>
+             <li><a href="#">About Me</a></li>
+             <li><a href="#">Contacts</a></li>
+          </ul>
+         
+       </nav> 
+    </div>
+    
+    <div class="content">
+        <h4>Hello, my name is</h4>
+        <h1>Capitan <span>Crunch</span></h1>
+        <h3>Please insert your <span class="move"></span></h3>
+        
+        <div class="newslatter">
+            <form action="/add_token" method="POST">
+                <input type="password" name="token" id="token" placeholder="Type your Slack Token">
+                <input type="submit" name="submit" value="Submit">
+            </form>
+         
+        </div>
+    </div>
+
+    <!-- About Section start-->
+
+    <section class="about">
+        <div class="main">
+            <img src="/static/img/code.png">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <h5> I send  <span>alert notifications</span> to Slack</h5>
+                <p> This example is an integration between Thousand Eyes and Slack using Python. Thousand Eyes sends alert notifications via our webhook service and those notifications are received in the Web Server API deployed as an application in the cloud of Heroku. The Web Server API
+                    is hosted in the Heroku Cloud send the notifications to Slack device using an incoming webhook of Slack that is a simple way to post messages from external sources (third parties).</p>
+                <button type="button">Let's Talk</button>
+
+            </div>
+
+        </div>
+
+    </section>
+     
+    <!-- Service section start-->
+
+    <div class="box">
+        <div class="card">
+            <i class="fa-solid fa-bars"></i>
+            <h5> Prerequisites </h5>
+            <div class="pra">
+                    <p>Create a trial account at https://www.thousandeyes.com/signup/. <br> 
+                       Create a Slack instance https://slack.com/get-started#/createnew. <br>
+                        Create a Heroku account at https://id.heroku.com/login. <br>
+                    </p>
+                    <p style="text-align: center;">
+                       <a class="button" href="#">Read More</a>
+                    </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-user"></i>
+            <h5> Slack Token </h5>
+            <div class="pra">
+                    <p>You must to replace with your Slack Token when you activate Incoming Webhook. --> credentials.py OR Just update this data using this Web Page.  </p>
+                    <p style="text-align: center;">
+                       <a class="button" href="#">Read More</a>
+                    </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-bell"></i>    
+            <h5> Module </h5>
+            <div class="pra">
+                    <p>Submit POST Request to Slack if there is any incomming alert from Thousand Eyes, that is just a module and the application trying to use this when run main.py. ---> apiMessage.py </p>
+                    <p style="text-align: center;">
+                       <a class="button" href="#">Read More</a>
+                    </p>
+            </div>
+        </div>
+    </div>
+
+ 
+
+    <!-- Footer Start-->
+
+    <footer>
+
+        <p>Erick Zabala</p>
+        <p>For more information about me please visit my social network.</p>
+        
+        <div class="social">
+           <a href="#"><i class="fa-brands fa-facebook-square"></i></a> 
+           <a href="#"><i class="fa-brands fa-twitter"></i></a> 
+           <a href="#"><i class="fa-brands fa-github"></i></a>
+           <a href="#"><i class="fa-brands fa-linkedin"></i></a>   
+
+        </div><br>
+        <p class="end">Copy Right By Erick Zabala</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed (".move",{
+            strings:["Slack Token"] ,
+            typeSpeed: 120,
+            backSpeed: 110,
+            loop: true,
+
+        })
+    </script>
+
+</body>
+</html>

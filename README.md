@@ -27,19 +27,22 @@ This example is an integration between Thousand Eyes and Slack using Python. Tho
 * You can work with the same files:
  
      * If you want to run that code, open a file called credentials.py and copy and paste your token into it. (Generated via Slack)
+     
 
      ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/token.png?raw=true)
 
+     
      * credentials.py ------> You must to replace with your Slack Token when you activate Incoming Webhook.
 
      ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/webhookSlack.png?raw=true)
 
+     
      * apiMessage.py ------> Submit POST Request to Slack if there is any incomming alert from Thousand Eyes, that is just a module an the application trying to use this when run main.py.
  
      * main.py ------> Activate your Web Server API using flask framework to receive POST request from Thousand Eyes Webhook service.
        In the main.py as you can see, to use a module, the application just needs to import the module and use its functions using the dot notation.
        
-       ![image](![image](https://user-images.githubusercontent.com/38144008/157380678-efeaa9fb-5bca-4e54-828b-bcbbc6190a21.png)
+       ![image](https://user-images.githubusercontent.com/38144008/157380678-efeaa9fb-5bca-4e54-828b-bcbbc6190a21.png)
 
      * The "main.py" file allows to active a Web Server API in Heroku Cloud where you can see the flow request using the line command "heroku logs --tail" however you need to    install Heroku CLI https://devcenter.heroku.com/articles/heroku-cli.
 

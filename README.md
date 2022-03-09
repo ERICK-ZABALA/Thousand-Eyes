@@ -36,7 +36,7 @@ You just need to put your token Slack in the portal Web to reuse the code, enjoy
      ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/token.png?raw=true)
 
      
-     * credentials.py ------> You must to replace with your Slack Token when you activate Incoming Webhook.
+     * credentials.py ------> IF You want to replace with your Slack Token without use the portal web (https://web-teyes.herokuapp.com/). you can modify the file credentials.py when you activate your Incoming Webhook.
 
      ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/webhookSlack.png?raw=true)
 

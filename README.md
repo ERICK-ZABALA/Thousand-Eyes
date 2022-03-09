@@ -9,6 +9,7 @@ This example is an integration between Thousand Eyes and Slack using Python. Tho
 
 ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/flowAlert.png?raw=true)
 
+
 ## PREREQUISITES
 
 * Create a trial account at https://www.thousandeyes.com/signup/. Write “Cisco” in the company field.
@@ -22,16 +23,25 @@ This example is an integration between Thousand Eyes and Slack using Python. Tho
 
 ## CONFIGURATION
 
-* Create your virtual environment in Python 3.9.2 and added the file runtime.txt, install all dependencies indicated in requirements.txt as well added Procfile file.
+* Create your virtual environment in Python 3.9.2 and add the file runtime.txt, install all dependencies indicate in requirements.txt as well add Procfile file.
 * You can work with the same files:
-     * apiMessage.py ------> Submit POST Request to Slack if there is any alert in our Thousand Eyes.
+ 
+     * If you want to run that code, open a file called credentials.py and copy and paste your token into it. (Generated via Slack)
+
+     ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/token.png?raw=true)
+
      * credentials.py ------> You must to replace with your Slack Token when you activate Incoming Webhook.
 
      ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/webhookSlack.png?raw=true)
 
-     * index.py ------> Activate your Web Server API using flask framework to receive POST request from Thousand Eyes Webhook service.
+     * apiMessage.py ------> Submit POST Request to Slack if there is any incomming alert from Thousand Eyes, that is just a module an the application trying to use this when run main.py.
+ 
+     * main.py ------> Activate your Web Server API using flask framework to receive POST request from Thousand Eyes Webhook service.
+       In the main.py as you can see, to use a module, the application just needs to import the module and use its functions using the dot notation.
+       
+       ![image](![image](https://user-images.githubusercontent.com/38144008/157380678-efeaa9fb-5bca-4e54-828b-bcbbc6190a21.png)
 
-* The "index.py" file allows you to active a Web Server API in Heroku Cloud where you can see the flow request using the line command "heroku logs --tail" however you need to install Heroku CLI https://devcenter.heroku.com/articles/heroku-cli.
+     * The "main.py" file allows to active a Web Server API in Heroku Cloud where you can see the flow request using the line command "heroku logs --tail" however you need to    install Heroku CLI https://devcenter.heroku.com/articles/heroku-cli.
 
 ## RUNNING
 

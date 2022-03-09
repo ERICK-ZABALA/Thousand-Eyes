@@ -29,14 +29,10 @@ You just need to put your token Slack in the portal Web to reuse the code, enjoy
 
 * Create your virtual environment in Python 3.9.2 and add the file runtime.txt, install all dependencies indicate in requirements.txt as well add Procfile file.
 * You can work with the same files:
- 
-     * If you want to run that code, open a file called credentials.py and copy and paste your token into it. (Generated via Slack)
-     
-
-     ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/token.png?raw=true)
-
      
      * credentials.py ------> IF You want to replace with your Slack Token without use the portal web (https://web-teyes.herokuapp.com/). you can modify the file credentials.py when you activate your Incoming Webhook.
+
+     ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/token.png?raw=true)
 
      ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/webhookSlack.png?raw=true)
 

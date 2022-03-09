@@ -9,6 +9,10 @@ This example is an integration between Thousand Eyes and Slack using Python. Tho
 
 ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/flowAlert.png?raw=true)
 
+You just need to put your token Slack in the portal Web to reuse the code, enjoying :)!!!
+
+![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/capitan.png?raw=true)
+
 
 ## PREREQUISITES
 

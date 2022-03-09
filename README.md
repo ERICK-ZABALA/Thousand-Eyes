@@ -37,7 +37,7 @@ This example is an integration between Thousand Eyes and Slack using Python. Tho
      ![image](https://github.com/ERICK-ZABALA/Thousand-Eyes/blob/master/slackBot/webhookSlack.png?raw=true)
 
      
-     * apiMessage.py ------> Submit POST Request to Slack if there is any incomming alert from Thousand Eyes, that is just a module an the application trying to use this when run main.py.
+     * apiMessage.py ------> Submit POST Request to Slack if there is any incomming alert from Thousand Eyes, that is just a module and the application trying to use this when run main.py.
  
      * main.py ------> Activate your Web Server API using flask framework to receive POST request from Thousand Eyes Webhook service.
        In the main.py as you can see, to use a module, the application just needs to import the module and use its functions using the dot notation.

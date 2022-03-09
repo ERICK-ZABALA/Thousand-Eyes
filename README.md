@@ -12,7 +12,7 @@ This example is an integration between Thousand Eyes and Slack using Python. Tho
 
 ## PREREQUISITES
 
-* Create a trial account at https://www.thousandeyes.com/signup/. Write “Cisco” in the company field.
+* Create a trial account at https://www.thousandeyes.com/signup/. Write “PSC Candidate” in the company field.
 * Configure a Test (Web Server TD Bank) with an alert that will trigger and clear alerts for your testing in Thousand Eyes.
 * Create a Slack instance https://slack.com/get-started#/createnew.
 * Create a Heroku account at https://id.heroku.com/login.
